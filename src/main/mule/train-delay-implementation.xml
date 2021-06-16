@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:email="http://www.mulesoft.org/schema/mule/email" xmlns:national-railway-train-services-api="http://www.mulesoft.org/schema/mule/national-railway-train-services-api"
+	xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:xml-module="http://www.mulesoft.org/schema/mule/xml-module" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/batch/current/mule-batch.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml-module http://www.mulesoft.org/schema/mule/xml-module/current/mule-xml-module.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/national-railway-train-services-api http://www.mulesoft.org/schema/mule/national-railway-train-services-api/current/mule-national-railway-train-services-api.xsd
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd">
+
+	<flow name="trainDelay-crsDetails" doc:id="6ab7f686-e643-4922-a062-b3cbbb7cb1da">
+		<db:select doc:name="userSubscribedDetails" doc:id="4d86fe3e-6f83-4b8c-9d4c-010fb606a499" config-ref="MySqlDatabase_Config">
+			<db:sql><![CDATA[select c.customer_id,a.subscription_id,a.from_station,a.to_station,c.email_id,date_format(from_time,'%H:%i')from_time,
+date_format(to_time,'%H:%i')to_time,
+floor(time_to_sec(timediff(from_time,Date_format(convert_tz(current_time(),'+00:00','+01:00'),'%H:%i:%s')))/60)timeOffset,
+floor((time_to_sec(timediff(to_time ,  from_time))/60)) timeWindow 
+from xxtrain_subscription_details a, xxtrain_status_details b,xxtrain_customer_details c
+where  c.customer_id = a.customer_id and c.status_type_id = b.status_type_id 
+and a.status_type_id = b.status_type_id and b.status_type_name = 'ACTIVE'
+and alert_service is not null and upper(alert_service) = 'YES'
+and IFNULL(DATE(journey_date),curdate()) = curdate()
+and from_station IS NOT NULL and (DATE_FORMAT(Date_sub(from_time , INTERVAL advance_notify_time minute),'%H:%i:%s')) between 
+Date_format(convert_tz(current_time(),'+00:00','+01:00'),'%H:%i:%s') 
+and Date_format(convert_tz(Date_add(current_time() , INTERVAL 30 minute),'+00:00','+01:00'),'%H:%i:%s'); ]]></db:sql>
+		</db:select>
+		<ee:transform doc:name="DBPayload" doc:id="d046d73a-9d69-4c04-8cad-d64bf8d2f5de" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<json-logger:logger doc:name="trainDelayCRSDetails_AfterDB" doc:id="7bbcd087-ded9-4738-aa49-909655475615" config-ref="JSON_Logger_Config" message="trainDelayCRSDetails_AfterDB"/>
+		<error-handler>
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="d69b9156-4d57-44f6-aa4f-96e0577da6a5" type="DB:QUERY_EXECUTION, DB:BAD_SQL_SYNTAX, EXPRESSION, STREAM_MAXIMUM_SIZE_EXCEEDED">
+				<ee:transform doc:name="Error Description" doc:id="2ca685ea-4501-4ccb-b0be-43de6fcca167" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Error Type": error.errorType.identifier,
+	"Error Message": error.errorMessage.payload,
+	"Error Description": error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<json-logger:logger doc:name="CRS Details Logger" doc:id="ee284225-22f8-4d51-b6bc-99c28fefa119" config-ref="JSON_Logger_Config" message="CRS Details Error Logs"/>
+			</on-error-continue>
+		</error-handler>
+	</flow>
+	<flow name="train-delay-soapRetrievalFlow" doc:id="9fd79f7a-85c0-497c-adcb-6a376058d511" >
+		<json-logger:logger doc:name="trainDelaySoapRetrieval_Start" doc:id="b1a2b150-6d1a-4540-8f1d-9969575acb05" config-ref="JSON_Logger_Config" message="trainDelaySoapRetrieval Start Logger"/>
+		<ee:transform doc:name="XMLConversionForSoap" doc:id="f2fdcf4e-255d-4dd5-807d-11c3706857eb">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://thalesgroup.com/RTTI/2017-10-01/ldb/
+---
+{
+	ns0#GetDepBoardWithDetailsRequest: {
+		ns0#numRows: 100,
+		ns0#crs: payload.from_station,
+		ns0#filterCrs: payload.to_station,
+		ns0#filterType: 'to',
+		ns0#timeOffset: payload.'timeOffset',
+		ns0#timeWindow: payload.'timeWindow'
+	}
+}]]></ee:set-payload>
+			</ee:message>
+			<ee:variables>
+				<ee:set-variable variableName="token"><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://thalesgroup.com/RTTI/2013-11-28/Token/types
+---
+headers : {
+	ns0#AccessToken: {
+		ns0#TokenValue: p('secure::token.apikey')
+	}
+}]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<wsc:consume operation="GetDepBoardWithDetails" doc:id="41655306-b3dd-4e59-8a68-8f5cf8eeacb0" config-ref="Web_Service_Consumer_Config" doc:name="WSDLConsume">
+			<wsc:message>
+				<wsc:headers><![CDATA[#[vars.token]]]></wsc:headers>
+			</wsc:message>
+		</wsc:consume>
+		<json-logger:logger doc:name="trainDelaySoapRetrieval_AfterConsume" doc:id="e2cb2b73-9ba3-4abf-b69f-91e9e2cbbf82" config-ref="JSON_Logger_Config" message="trainDelaySoapRetrieval After Consume" tracePoint="FLOW"/>
+		<ee:transform doc:name="SoapPayloadtoJson" doc:id="4c122e7a-29ec-4309-a38f-cd1235297dc8" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="dbVar" ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"fromTime": payload.from_time,
+	"fromStation": payload.from_station,
+	"toStation": payload.to_station,
+	"customerId": payload.customer_id,
+	"subscriptionId": payload.subscription_id,
+	"emailId": payload.email_id
+}]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<json-logger:logger doc:name="trainDelaySoapRetrieval_End" doc:id="a2f99fdc-b229-41af-a019-4d868559ba68" config-ref="JSON_Logger_Config" message="trainDelaySoapRetrieval End Logger" tracePoint="END"/>
+		<error-handler >
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="6bc16cc8-baa4-4d38-ad51-93312961c95b" type="WSC:BAD_REQUEST, WSC:BAD_RESPONSE, WSC:CANNOT_DISPATCH, WSC:ENCODING, WSC:TIMEOUT, EXPRESSION, STREAM_MAXIMUM_SIZE_EXCEEDED">
+				<ee:transform doc:name="Error Description" doc:id="fea97b8f-0ea0-49e2-b90c-2e3775dce451" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Error Type": error.errorType.identifier,
+	"Error Message": error.errorMessage.payload,
+	"Error Description": error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<json-logger:logger doc:name="TrainDelay_SoapRetrieval_ErrorLogger" doc:id="d62512c3-1f27-493e-bad3-541182c832ee" config-ref="JSON_Logger_Config" message="TrainDelay Soap Retrieval Error Logs"/>
+			</on-error-continue>
+		</error-handler>
+	</flow>
+	<flow name="xmlEgFlow" doc:id="aac3eaa5-d0f8-42d0-b8c5-27538cb49300" >
+		<ee:transform doc:name="ExampleSoapPayload" doc:id="a9887b5d-c607-4b11-8a56-95038796d814" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  "headers": {
+    
+  },
+  "attachments": {
+    
+  },
+  "body": {
+    "GetDepBoardWithDetailsResponse": {
+      "GetStationBoardResult": {
+        "generatedAt": "2021-05-27T05:58:00.3122244+01:00",
+        "locationName": "London Bridge",
+        "crs": "LBG",
+        "filterLocationName": "London Cannon Street",
+        "filtercrs": "CST",
+        "nrccMessages": {
+          "message": "\nA member of signalling staff has been taken ill at Bognor Regis. Consequently, trains in the area may be cancelled or revised. More details can be found in <a href=\"http://nationalrail.co.uk/service_disruptions/272026.aspx \">Latest Travel News.</a>"
+        },
+        "platformAvailable": "true",
+        "trainServices": {
+          "service": {
+            "std": "00:24",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "10",
+            "serviceID": "eZvJOmXIugxJr2nArCuzNg==",
+            "rsid": "SE556800",
+            "origin": {
+              "location": {
+                "locationName": "Crayford",
+                "crs": "CRY"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:14",
+                  "et": "On time",
+                  "length": "10",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "00:43",
+            "etd": "Cancelled",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "cancelReason": "This train has been cancelled because of a derailed train",
+            "serviceID": "wL2KIKqaJee9RYZuxsTWHg==",
+            "rsid": "SE573600",
+            "origin": {
+              "location": {
+                "locationName": "Orpington",
+                "crs": "ORP"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:18",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "00:40",
+            "etd": "00:47",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "YSa8j4HOuRp7mTUmizgW1A==",
+            "rsid": "SE550500",
+            "origin": {
+              "location": {
+                "locationName": "Slade Green",
+                "crs": "SGR"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:21",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:42",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "rrpt9pwtQjrzC4kgJjDXFw==",
+            "rsid": "SE910500",
+            "origin": {
+              "location": {
+                "locationName": "Dover Priory",
+                "crs": "DVP"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "avgLoading": "16",
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:26",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "avgLoading": "16",
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "07:24",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "5",
+            "serviceID": "0mVxjc9/VYqg8c017qRsSA==",
+            "adhocAlerts": {
+              "adhocAlertText": " Will be formed of 5 coaches instead of 10. "
+            },
+            "rsid": "SE551800",
+            "origin": {
+              "location": {
+                "locationName": "Dartford",
+                "crs": "DFD"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "avgLoading": "28",
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:30",
+                  "et": "On time",
+                  "length": "5",
+                  "formation": {
+                    "avgLoading": "28",
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  },
+                  "adhocAlerts": {
+                    "adhocAlertText": " Will be formed of 5 coaches instead of 10. "
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+  
+]]></ee:set-payload>
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="dbVar" ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"fromTime": payload.from_time,
+	"fromStation": payload.from_station,
+	"toStation": payload.to_station,
+	"customerId": payload.customer_id,
+	"subscriptionId": payload.subscription_id,
+	"emailId": payload.email_id
+}]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+	</flow>
+	<flow name="train-delay-emailNotificationFlow" doc:id="c373de9d-2129-4214-a921-9ecf84dbfc33" >
+		<json-logger:logger doc:name="TrainDelayEmailNotification_Start" doc:id="8b2986ab-11b8-4d91-a524-aa5750f34ee9" config-ref="JSON_Logger_Config" message="TrainDelayEmailNotification Start Logger"/>
+		<ee:transform doc:name="Payload" doc:id="a593c797-04e6-4619-bce3-7d8030db4d02" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+
+payload
+]]></ee:set-payload>
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="emailId" ><![CDATA[attributes.uriParams.'emailId']]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<choice doc:name="Choice" doc:id="89e713e7-88a5-4ea9-af3b-e369a1ca01e6" >
+			<when expression='#[payload.delayStatus == "Delayed"]'>
+				<parse-template doc:name="DelayHTMLTemplate" doc:id="7ee67f5e-537e-444e-bc91-f134fe451c7f" location="examples/trainDelayDetails.template"/>
+			</when>
+			<otherwise >
+				<parse-template doc:name="CancelHtmlTemplate" doc:id="68e81201-77b3-4317-ab49-d1fe3245973a" location="examples/trainCancellationHTML.template" outputMimeType="text/html" />
+			</otherwise>
+		</choice>
+		<email:send doc:name="Send" doc:id="ad4a05a8-d67e-4ee2-90b1-4d84956dafee" config-ref="Email_SMTP" fromAddress="njclabs05@gmail.com" subject="Alert on National Rail Train Delays">
+			<email:to-addresses >
+				<email:to-address value="#[vars.emailId]" />
+			</email:to-addresses>
+			<email:body contentType="text/html">
+			</email:body>
+		</email:send>
+		<ee:transform doc:name="Payload" doc:id="040145c1-da32-46e0-b34b-1ef7f6d08f07" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  description: "Success Message",
+  message: "Email been sent successfully"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<json-logger:logger doc:name="TrainDelayEmailNotification_AfterEmailNotification" doc:id="16055a3f-2648-4c00-a6ec-6e66f1090e74" config-ref="JSON_Logger_Config" message="TrainDelayEmailNotification After Email Notification Logger" tracePoint="FLOW"/>
+		<error-handler >
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="6b96d1b4-bd0d-41d4-88ce-7aa559a22705" type="EMAIL:SEND, EXPRESSION, STREAM_MAXIMUM_SIZE_EXCEEDED">
+				<ee:transform doc:name="Error Description" doc:id="699846f3-8b55-4a49-a380-bfdb11ca8ad7" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Error Type": error.errorType.identifier,
+	"Error Message": error.errorMessage.payload,
+	"Error Description": error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<json-logger:logger doc:name="TrainDelay_EmailNotification_ErrorLogger" doc:id="f864df63-ac08-486d-b751-fd91629cf7ef" config-ref="JSON_Logger_Config" message="Train Delay Email Notification Error Logs"/>
+			</on-error-continue>
+		</error-handler>
+	</flow>
+</mule>

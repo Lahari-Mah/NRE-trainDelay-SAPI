@@ -1,0 +1,1138 @@
+﻿{
+  "headers": {
+    
+  },
+  "attachments": {
+    
+  },
+  "body": {
+    "GetDepBoardWithDetailsResponse": {
+      "GetStationBoardResult": {
+        "generatedAt": "2021-05-27T05:58:00.3122244+01:00",
+        "locationName": "London Bridge",
+        "crs": "LBG",
+        "filterLocationName": "London Cannon Street",
+        "filtercrs": "CST",
+        "nrccMessages": {
+          "message": "\nA member of signalling staff has been taken ill at Bognor Regis. Consequently, trains in the area may be cancelled or revised. More details can be found in <a href=\"http://nationalrail.co.uk/service_disruptions/272026.aspx \">Latest Travel News.</a>"
+        },
+        "platformAvailable": "true",
+        "trainServices": {
+          "service": {
+            "std": "06:18",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "10",
+            "serviceID": "eZvJOmXIugxJr2nArCuzNg==",
+            "rsid": "SE556800",
+            "origin": {
+              "location": {
+                "locationName": "Crayford",
+                "crs": "CRY"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:14",
+                  "et": "On time",
+                  "length": "10",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:24",
+            "etd": "06:27",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "wL2KIKqaJee9RYZuxsTWHg==",
+            "rsid": "SE573600",
+            "origin": {
+              "location": {
+                "locationName": "Orpington",
+                "crs": "ORP"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:18",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:17",
+            "etd": "Cancelled",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "YSa8j4HOuRp7mTUmizgW1A==",
+            "cancelReason":This train has been cancelled because of a derailed train
+            "rsid": "SE550500",
+            "origin": {
+              "location": {
+                "locationName": "Slade Green",
+                "crs": "SGR"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:21",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:20",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "rrpt9pwtQjrzC4kgJjDXFw==",
+            "rsid": "SE910500",
+            "origin": {
+              "location": {
+                "locationName": "Dover Priory",
+                "crs": "DVP"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "avgLoading": "16",
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:26",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "avgLoading": "16",
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:24",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "5",
+            "serviceID": "0mVxjc9/VYqg8c017qRsSA==",
+            "adhocAlerts": {
+              "adhocAlertText": " Will be formed of 5 coaches instead of 10. "
+            },
+            "rsid": "SE551800",
+            "origin": {
+              "location": {
+                "locationName": "Dartford",
+                "crs": "DFD"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "avgLoading": "28",
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:30",
+                  "et": "On time",
+                  "length": "5",
+                  "formation": {
+                    "avgLoading": "28",
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  },
+                  "adhocAlerts": {
+                    "adhocAlertText": " Will be formed of 5 coaches instead of 10. "
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:28",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "JjRAqxmpAFMjiEyayxfOrQ==",
+            "rsid": "SE207000",
+            "origin": {
+              "location": {
+                "locationName": "Gillingham (Kent)",
+                "crs": "GLM"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:35",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:36",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "10",
+            "serviceID": "kYqkOvNYMlk1pC0LUYKvpQ==",
+            "rsid": "SE550600",
+            "origin": {
+              "location": {
+                "locationName": "Slade Green",
+                "crs": "SGR"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:42",
+                  "et": "On time",
+                  "length": "10",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:39",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "10",
+            "serviceID": "sJqRx8Fj0170lYKmzTN2SA==",
+            "rsid": "SE557300",
+            "origin": {
+              "location": {
+                "locationName": "Crayford",
+                "crs": "CRY"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "avgLoading": "28",
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:43",
+                  "et": "On time",
+                  "length": "10",
+                  "formation": {
+                    "avgLoading": "28",
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:41",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "10",
+            "serviceID": "7z166to5dNZj2+5SGKlGKw==",
+            "rsid": "SE235300",
+            "origin": {
+              "location": {
+                "locationName": "Tunbridge Wells",
+                "crs": "TBW"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Standard"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:48",
+                  "et": "On time",
+                  "length": "10",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Standard"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "service": {
+            "std": "06:44",
+            "etd": "On time",
+            "platform": "3",
+            "operator": "Southeastern",
+            "operatorCode": "SE",
+            "serviceType": "train",
+            "length": "8",
+            "serviceID": "4Iolx5eP5iU7xKnhm7KROQ==",
+            "rsid": "SE573800",
+            "origin": {
+              "location": {
+                "locationName": "Orpington",
+                "crs": "ORP"
+              }
+            },
+            "destination": {
+              "location": {
+                "locationName": "London Cannon Street",
+                "crs": "CST"
+              }
+            },
+            "formation": {
+              "coaches": {
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "Accessible"
+                },
+                "coach": {
+                  "coachClass": "Standard",
+                  "toilet": "None"
+                }
+              }
+            },
+            "subsequentCallingPoints": {
+              "callingPointList": {
+                "callingPoint": {
+                  "locationName": "London Cannon Street",
+                  "crs": "CST",
+                  "st": "06:49",
+                  "et": "On time",
+                  "length": "8",
+                  "formation": {
+                    "coaches": {
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "Accessible"
+                      },
+                      "coach": {
+                        "coachClass": "Standard",
+                        "toilet": "None"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

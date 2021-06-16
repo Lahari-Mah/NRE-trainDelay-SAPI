@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="SubscriptionType" format="json">
+      <types:shape format="weave" example="examples/subscriptionType-1.json"><![CDATA[%dw 2.0
+
+type SubscriptionType = Array<{|  fromTime: String,   fromStation: String,   toStation: String,   toTime: String,   journeyDate: String,   advanceNotifyTime: Number {"typeId": "int"},   alertService: String|}> {"example": "[{\\\"fromTime\\\":\\\"10:40:00\\\",\\\"fromStation\\\":\\\"LBG\\\",\\\"toStation\\\":\\\"CST\\\",\\\"toTime\\\":\\\"12:07:00\\\",\\\"journeyDate\\\":\\\"2021-05-21\\\",\\\"advanceNotifyTime\\\":60},{\\\"fromTime\\\":\\\"06:40:00\\\",\\\"fromStation\\\":\\\"BSK\\\",\\\"toStation\\\":\\\"RDG\\\",\\\"toTime\\\":\\\"08:17:00\\\",\\\"journeyDate\\\":\\\"2021-05-21\\\",\\\"advanceNotifyTime\\\":60,\\\"alertService\\\":\\\"Yes\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="TrainDelayJson" format="json">
+      <types:shape format="weave" example="examples/soapurl-1.json"><![CDATA[%dw 2.0
+
+type TrainDelayJson = {|
+  headers: {|  |}, 
+  attachments: {|  |}, 
+  body: {|
+    GetDepBoardWithDetailsResponse: {|
+      GetStationBoardResult: {|
+        generatedAt: String, 
+        locationName: String, 
+        crs: String, 
+        filterLocationName: String, 
+        filtercrs: String, 
+        nrccMessages: {| message: String |}, 
+        platformAvailable: String, 
+        trainServices: {|
+          service: {|
+            std: String, 
+            etd: String, 
+            platform: String, 
+            operator: String, 
+            operatorCode: String, 
+            serviceType: String, 
+            length: String, 
+            serviceID: String, 
+            rsid: String, 
+            origin: {|
+              location: {|
+                locationName: String, 
+                crs: String
+              |}
+            |}, 
+            destination: {|
+              location: {|
+                locationName: String, 
+                crs: String
+              |}
+            |}, 
+            formation: {|
+              coaches: {|
+                coach: {|
+                  coachClass: String, 
+                  toilet: String
+                |}
+              |}
+            |}, 
+            subsequentCallingPoints: {|
+              callingPointList: {|
+                callingPoint: {|
+                  locationName: String, 
+                  crs: String, 
+                  st: String, 
+                  et: String, 
+                  length: String, 
+                  formation: {|
+                    coaches: {|
+                      coach: {|
+                        coachClass: String, 
+                        toilet: String
+                      |}
+                    |}
+                  |}
+                |}
+              |}
+            |}
+          |}
+        |}
+      |}
+    |}
+  |}
+|} {"example": "{\\\"headers\\\":{},\\\"attachments\\\":{},\\\"body\\\":{\\\"GetDepBoardWithDetailsResponse\\\":{\\\"GetStationBoardResult\\\":{\\\"generatedAt\\\":\\\"2021-05-27T05:58:00.3122244+01:00\\\",\\\"locationName\\\":\\\"London Bridge\\\",\\\"crs\\\":\\\"LBG\\\",\\\"filterLocationName\\\":\\\"London Cannon Street\\\",\\\"filtercrs\\\":\\\"CST\\\",\\\"nrccMessages\\\":{\\\"message\\\":\\\"\\\\nA member of signalling staff has been taken ill at Bognor Regis. Consequently, trains in the area may be cancelled or revised. More details can be found in <a href=\\\\\\\"http:\\/\\/nationalrail.co.uk\\/service_disruptions\\/272026.aspx \\\\\\\">Latest Travel News.<\\/a>\\\"},\\\"platformAvailable\\\":\\\"true\\\",\\\"trainServices\\\":{\\\"service\\\":{\\\"std\\\":\\\"06:44\\\",\\\"etd\\\":\\\"On time\\\",\\\"platform\\\":\\\"3\\\",\\\"operator\\\":\\\"Southeastern\\\",\\\"operatorCode\\\":\\\"SE\\\",\\\"serviceType\\\":\\\"train\\\",\\\"length\\\":\\\"8\\\",\\\"serviceID\\\":\\\"4Iolx5eP5iU7xKnhm7KROQ==\\\",\\\"rsid\\\":\\\"SE573800\\\",\\\"origin\\\":{\\\"location\\\":{\\\"locationName\\\":\\\"Orpington\\\",\\\"crs\\\":\\\"ORP\\\"}},\\\"destination\\\":{\\\"location\\\":{\\\"locationName\\\":\\\"London Cannon Street\\\",\\\"crs\\\":\\\"CST\\\"}},\\\"formation\\\":{\\\"coaches\\\":{\\\"coach\\\":{\\\"coachClass\\\":\\\"Standard\\\",\\\"toilet\\\":\\\"None\\\"}}},\\\"subsequentCallingPoints\\\":{\\\"callingPointList\\\":{\\\"callingPoint\\\":{\\\"locationName\\\":\\\"London Cannon Street\\\",\\\"crs\\\":\\\"CST\\\",\\\"st\\\":\\\"06:49\\\",\\\"et\\\":\\\"On time\\\",\\\"length\\\":\\\"8\\\",\\\"formation\\\":{\\\"coaches\\\":{\\\"coach\\\":{\\\"coachClass\\\":\\\"Standard\\\",\\\"toilet\\\":\\\"None\\\"}}}}}}}}}}}}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="alertType" format="json">
+      <types:shape format="weave" example="examples/alertType.json"><![CDATA[%dw 2.0
+
+type alertType = Array<{|  originLocation: String,   destinationLocation: String,   serviceType: String,   serviceId: String,   delayStatus: String,   delayTime: Number {"typeId": "int"},   trainDelayReason: String|}> {"example": "[{\\\"originLocation\\\":\\\"\u201CLBG\u201D\\\",\\\"destinationLocation\\\":\\\"\u201CCST\u201D\\\",\\\"serviceType\\\":\\\"\u201Ctrain\u201D\\\",\\\"serviceId\\\":\\\"\u201Cabc\u201D\\\",\\\"delayStatus\\\":\\\"\u201DDelayed\u201D\\\",\\\"delayTime\\\":3,\\\"trainDelayReason\\\":\\\"\u201CTrainbreakdown\u201D\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="message" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+    <types:type name="variableType" format="json">
+      <types:shape format="weave" example="examples/variable.json"><![CDATA[%dw 2.0
+
+type variableType = Array<{|  Etime: String,   Stime: String|}> {"example": "[{\\\"Etime\\\":\\\"10:40\\\",\\\"Stime\\\":\\\"10:45\\\"},{\\\"Etime\\\":\\\"10:43\\\",\\\"Stime\\\":\\\"10:45\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="emailId" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+    <types:type name="serviceNowType" format="json">
+      <types:shape format="weave" example="examples/createIncident.json"><![CDATA[%dw 2.0
+
+type serviceNowType = {|
+  caller_id: String, 
+  comments: String, 
+  short_description: String, 
+  state: String
+|} {"example": "{\\\"caller_id\\\":\\\"fbdgh123\\\",\\\"comments\\\":\\\"DataComments\\\",\\\"short_description\\\":\\\"Issue in Database Connectivity\\\",\\\"state\\\":\\\"stateid\\\"}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#f2fdcf4e-255d-4dd5-807d-11c3706857eb">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="SubscriptionType"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a9887b5d-c607-4b11-8a56-95038796d814">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="TrainDelayJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="TrainDelayJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#59bce518-e42c-49e9-971b-0ef5feed285c">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="alertType"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#d61b4938-0525-4e19-b255-6178a08a7404">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="alertType"/>
+          <types:attributes type="alertType"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="alertType"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#b8c178af-cd68-4706-90db-50f9109f9ff0">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="TrainDelayJson"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="delayMessage" type="message"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#0b77a1fc-d78e-46e7-ae37-ef7e0bbd12e0">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="alertType"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="alertType"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#abd16b5d-7502-44c6-99bd-d38f5631a5c5">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="alertType"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a593c797-04e6-4619-bce3-7d8030db4d02">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="alertType"/>
+          <types:attributes type="emailId"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:variables>
+          <types:variable name="emailId" type="emailId"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#62a04357-2cf2-40fe-a120-02b3695aa42c">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="serviceNowType"/>
+          <types:attributes type="serviceNowType"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#7ecec49f-bb94-4b92-b26f-a0dfc8a8095c">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="message"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="message"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

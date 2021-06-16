@@ -1,0 +1,17 @@
+﻿ [{
+    "fromTime": "10:40:00",
+    "fromStation": "LBG",
+    "toStation": "CST",
+    "toTime": "12:07:00",
+    "journeyDate": "2021-05-21",
+   "advanceNotifyTime": 60
+ },
+ {
+    "fromTime": "06:40:00",
+    "fromStation": "BSK",
+    "toStation": "RDG",
+    "toTime": "08:17:00",
+    "journeyDate": "2021-05-21",
+    "advanceNotifyTime": 60,
+    "alertService": "Yes"
+ }]

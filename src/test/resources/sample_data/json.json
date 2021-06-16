@@ -1,0 +1,1116 @@
+{
+body:
+      <GetDepBoardWithDetailsResponse xmlns="http://thalesgroup.com/RTTI/2017-10-01/ldb/">
+         <GetStationBoardResult xmlns:lt="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" xmlns:lt6="http://thalesgroup.com/RTTI/2017-02-02/ldb/types" xmlns:lt7="http://thalesgroup.com/RTTI/2017-10-01/ldb/types" xmlns:lt4="http://thalesgroup.com/RTTI/2015-11-27/ldb/types" xmlns:lt5="http://thalesgroup.com/RTTI/2016-02-16/ldb/types" xmlns:lt2="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" xmlns:lt3="http://thalesgroup.com/RTTI/2015-05-14/ldb/types">
+            <lt4:generatedAt>2021-05-26T08:19:03.6611096+01:00</lt4:generatedAt>
+            <lt4:locationName>London Bridge</lt4:locationName>
+            <lt4:crs>LBG</lt4:crs>
+            <lt4:filterLocationName>London Cannon Street</lt4:filterLocationName>
+            <lt4:filtercrs>CST</lt4:filtercrs>
+            <lt4:nrccMessages>
+               <lt:message>Cancellations on Southeastern Metro routes. More details can be found in &lt;a href="http://nationalrail.co.uk/service_disruptions/271872.aspx ">Latest Travel News.&lt;/a></lt:message>
+            </lt4:nrccMessages>
+            <lt4:platformAvailable>true</lt4:platformAvailable>
+            <lt7:trainServices>
+               <lt7:service>
+                  <lt4:std>08:17</lt4:std>
+                  <lt4:etd>08:19</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>8</lt4:length>
+                  <lt4:serviceID>7W+9du3tvWahtMQbTPWa0g==</lt4:serviceID>
+                  <lt5:rsid>SE551300</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>Slade Green</lt4:locationName>
+                        <lt4:crs>SGR</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:23</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>8</lt7:length>
+                           <lt7:formation>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:20</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>8</lt4:length>
+                  <lt4:serviceID>18tb2hxZqZQtw7feVmCsYg==</lt4:serviceID>
+                  <lt5:rsid>SE594600</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>Hayes (Kent)</lt4:locationName>
+                        <lt4:crs>HYS</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:24</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>8</lt7:length>
+                           <lt7:formation>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:26</lt4:std>
+                  <lt4:etd>Cancelled</lt4:etd>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:isCancelled>true</lt4:isCancelled>
+                  <lt4:filterLocationCancelled>true</lt4:filterLocationCancelled>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:cancelReason>This train has been cancelled because of a derailed train</lt4:cancelReason>
+                  <lt4:serviceID>Lo0LVO6g4OycCqyEfyjCMg==</lt4:serviceID>
+                  <lt5:rsid>SE626600</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:avgLoading>34</lt7:avgLoading>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:30</lt7:st>
+                           <lt7:et>Cancelled</lt7:et>
+                           <lt7:formation>
+                              <lt7:avgLoading>3</lt7:avgLoading>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:30</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>8</lt4:length>
+                  <lt4:serviceID>KQSNiXN6qGHW34nWaBn6ow==</lt4:serviceID>
+                  <lt5:rsid>SE207300</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>Ramsgate</lt4:locationName>
+                        <lt4:crs>RAM</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:avgLoading>23</lt7:avgLoading>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:37</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>8</lt7:length>
+                           <lt7:formation>
+                              <lt7:avgLoading>23</lt7:avgLoading>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:33</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>12</lt4:length>
+                  <lt4:serviceID>OW2p1BxWpqoEYfOBi8kidg==</lt4:serviceID>
+                  <lt5:rsid>SE159200</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>Ashford International</lt4:locationName>
+                        <lt4:crs>AFK</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:37</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>12</lt7:length>
+                           <lt7:formation>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:36</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>10</lt4:length>
+                  <lt4:serviceID>MneUMV64Pn850v/ZcuTKCw==</lt4:serviceID>
+                  <lt5:rsid>SE581800</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:avgLoading>31</lt7:avgLoading>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:43</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>10</lt7:length>
+                           <lt7:formation>
+                              <lt7:avgLoading>3</lt7:avgLoading>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:40</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>10</lt4:length>
+                  <lt4:serviceID>YZZ90uUZNaba99Lj1/kcNw==</lt4:serviceID>
+                  <lt5:rsid>SE623500</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:avgLoading>31</lt7:avgLoading>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A5">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B5">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:43</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>10</lt7:length>
+                           <lt7:formation>
+                              <lt7:avgLoading>3</lt7:avgLoading>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A5">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B5">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:44</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>8</lt4:length>
+                  <lt4:serviceID>DmDkfbXWzyssmrZ55YuCFA==</lt4:serviceID>
+                  <lt5:rsid>SE574600</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>Orpington</lt4:locationName>
+                        <lt4:crs>ORP</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:49</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>8</lt7:length>
+                           <lt7:formation>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:47</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>10</lt4:length>
+                  <lt4:serviceID>/K4cFQh4XKSBU9Ps3am6+w==</lt4:serviceID>
+                  <lt5:rsid>SE638700</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:avgLoading>23</lt7:avgLoading>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A5">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B5">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:53</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>10</lt7:length>
+                           <lt7:formation>
+                              <lt7:avgLoading>5</lt7:avgLoading>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A5">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B5">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+               <lt7:service>
+                  <lt4:std>08:50</lt4:std>
+                  <lt4:etd>On time</lt4:etd>
+                  <lt4:platform>3</lt4:platform>
+                  <lt4:operator>Southeastern</lt4:operator>
+                  <lt4:operatorCode>SE</lt4:operatorCode>
+                  <lt4:serviceType>train</lt4:serviceType>
+                  <lt4:length>10</lt4:length>
+                  <lt4:serviceID>x92Qs7MhXIQJS+soMMYyng==</lt4:serviceID>
+                  <lt5:rsid>SE594700</lt5:rsid>
+                  <lt5:origin>
+                     <lt4:location>
+                        <lt4:locationName>Hayes (Kent)</lt4:locationName>
+                        <lt4:crs>HYS</lt4:crs>
+                     </lt4:location>
+                  </lt5:origin>
+                  <lt5:destination>
+                     <lt4:location>
+                        <lt4:locationName>London Cannon Street</lt4:locationName>
+                        <lt4:crs>CST</lt4:crs>
+                     </lt4:location>
+                  </lt5:destination>
+                  <lt7:formation>
+                     <lt7:coaches>
+                        <lt7:coach number="A1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="A4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B3">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Accessible</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="B4">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C1">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet status="Unknown">None</lt7:toilet>
+                        </lt7:coach>
+                        <lt7:coach number="C2">
+                           <lt7:coachClass>Standard</lt7:coachClass>
+                           <lt7:toilet>Standard</lt7:toilet>
+                        </lt7:coach>
+                     </lt7:coaches>
+                  </lt7:formation>
+                  <lt7:subsequentCallingPoints>
+                     <lt7:callingPointList>
+                        <lt7:callingPoint>
+                           <lt7:locationName>London Cannon Street</lt7:locationName>
+                           <lt7:crs>CST</lt7:crs>
+                           <lt7:st>08:54</lt7:st>
+                           <lt7:et>On time</lt7:et>
+                           <lt7:length>10</lt7:length>
+                           <lt7:formation>
+                              <lt7:coaches>
+                                 <lt7:coach number="A1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="A4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B3">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Accessible</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="B4">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C1">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet status="Unknown">None</lt7:toilet>
+                                 </lt7:coach>
+                                 <lt7:coach number="C2">
+                                    <lt7:coachClass>Standard</lt7:coachClass>
+                                    <lt7:toilet>Standard</lt7:toilet>
+                                 </lt7:coach>
+                              </lt7:coaches>
+                           </lt7:formation>
+                        </lt7:callingPoint>
+                     </lt7:callingPointList>
+                  </lt7:subsequentCallingPoints>
+               </lt7:service>
+            </lt7:trainServices>
+         </GetStationBoardResult>
+      </GetDepBoardWithDetailsResponse>
+}

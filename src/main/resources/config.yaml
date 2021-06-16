@@ -1,0 +1,16 @@
+nsr:
+  wsdl: "https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx"
+  service: "ldb"
+  port: "LDBServiceSoap"
+  address: "https://lite.realtime.nationalrail.co.uk/OpenLDBWS/ldb11.asmx"
+
+token:
+  apikey: "![JB46+DlQnb+BLbbDq6Vohv/dF03xem58cycOb4eTAyThWlSBM10uvQ==]"
+  
+http:
+  port: "8083"
+
+serviceNow:
+  port: "8087"
+  host: "0.0.0.0"
+  protocol: "HTTP"

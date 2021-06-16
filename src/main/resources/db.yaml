@@ -1,0 +1,6 @@
+database:
+  host: "64.227.37.97"
+  username: njclabs
+  password: "![Hx0Zn8cS4alPi5z90V0ytQ==]"
+  port: "3306"
+  schema: nrs

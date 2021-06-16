@@ -1,0 +1,41 @@
+<html>
+<body>
+<div style= "max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;">
+<h2 style = "text-align: center; color: #35564C">
+National Railway Delay Tracker
+</h2>
+<p>Dear Customer, 
+<br> We are writing to inform of you a delay on your subscriptions. 
+Please find the below service details for your future reference.
+</p>
+<table style="border: 1px solid black; float: left; width: 100%; border-collapse: collapse;">
+<tr style = "background-color: #009879;">
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Origin Location </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Destination Location </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Leaving Time </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Arrival Time </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Service Type </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Service Id </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Delay Status </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Delay Time </th>
+<th style= "padding: 15px;color: #ffffff; text-align: left;flex-basis: 10%;"> Delay Reason </th>
+</tr>
+<tr style= "background-color: #f3f3f3;border-bottom: 1px solid #dddddd;">
+<td style= "padding: 15px;text-align: left;"> #[payload.originLocation] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.destinationLocation] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.fromTime] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.toTime] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.serviceType] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.serviceId] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.delayStatus] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.delayTime] </td>
+<td style= "padding: 15px;text-align: left;"> #[payload.trainDelayReason] </td>
+</tr>
+</table>
+</div>
+</body>
+</html>

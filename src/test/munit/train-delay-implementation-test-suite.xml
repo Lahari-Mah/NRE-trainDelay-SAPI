@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
+	<munit:config name="train-delay-implementation-test-suite.xml" />
+	<munit:test name="trainDelay-crsDetailsTest" doc:id="e81d364d-cbc2-47ac-9911-cc93bd068494" description="Test" timeOut="120000">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to trainDelay-crsDetails" doc:id="341f7941-b704-440f-8c26-55ee2f002379" name="trainDelay-crsDetails"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="notNull" doc:id="b957a51e-fc77-489e-a28d-ba5f5eb7d568" message="#['Not as expected']" expression="#[payload]" is="#[MunitTools::notNullValue()]"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="train-delay-soapRetrievalFlowTest" doc:id="18591bfc-f4eb-4b1a-83bc-6a1dd4df513e" description="Test" timeOut="120000">
+		<munit:behavior >
+			<munit:set-event doc:name="payloadXML" doc:id="95c0f125-c7c9-42f2-a655-f2fac0dd2ef9" >
+				<munit:payload value='#[&#10;output application/json&#10;---&#10;{&#10; from_station: "ABC",&#10; to_station: "CDE",&#10; timeOffset: 0,&#10;timeWindow: 60&#10;}&#10;]' />
+			</munit:set-event>
+			<munit-tools:mock-when doc:name="WSDL" doc:id="a5b9590a-f96c-4f16-aabd-7665198a2f22" processor="wsc:consume">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="41655306-b3dd-4e59-8a68-8f5cf8eeacb0" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-call flow="xmlEgFlow" />
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to train-delay-soapRetrievalFlow" doc:id="d90a68cc-b249-4733-b144-1bdb86f2d985" name="train-delay-soapRetrievalFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="notNull" doc:id="5262e732-6bf1-4fd2-8be7-23c660812811" message="#['Not as expected']" expression="#[payload]" is="#[MunitTools::notNullValue()]"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="train-delay-emailNotificationFlowTest" doc:id="a56515c2-8c7a-4830-948d-c033d3731116" description="Test" timeOut="120000">
+		<munit:behavior >
+			<munit:set-event doc:name="delayStatus" doc:id="2fe49afc-86f2-4302-8e32-997354bdc8a0" >
+				<munit:payload value='#[&#10;output application/json&#10;---&#10;{&#10;"delayStatus": "Cancelled"&#10;}&#10;]' mediaType="application/json" />
+			</munit:set-event>
+			<munit-tools:mock-when doc:name="emailHtml" doc:id="06fe6d7f-ec2c-4d0f-91c9-a46591cd3e0d" processor="parse-template">
+				<munit-tools:with-attributes>
+					<munit-tools:with-attribute whereValue="68e81201-77b3-4317-ab49-d1fe3245973a" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return>
+					<munit-tools:payload value='#[&#10;output application/json&#10;---&#10;"Cancel HTML template"&#10;]' />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+			<flow-ref doc:name="emailFlow" doc:id="f5094f83-b559-4472-8a01-81bbb2309d4d" name="emailFlow"/>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to train-delay-emailNotificationFlow" doc:id="3314ff72-9b01-433c-a687-1f16eda32be5" name="train-delay-emailNotificationFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="notNull" doc:id="e1d09de3-b321-4e96-bf2d-0d4a7c54bc11" message="#['Not as expected']" expression="#[payload]" is="#[MunitTools::notNullValue()]"/>
+		</munit:validation>
+	</munit:test>
+	<flow name="emailFlow" doc:id="b13a35a5-390b-4f6e-9bd0-024f49f49800" >
+		<munit-tools:mock-when doc:name="emailNotification" doc:id="1e0d8f9a-b11d-47a6-84f2-d1f916803faa" processor="email:send">
+				<munit-tools:with-attributes>
+					<munit-tools:with-attribute whereValue="ad4a05a8-d67e-4ee2-90b1-4d84956dafee" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return>
+					<munit-tools:payload value='#[&#10;output application/json&#10;---&#10;"Email sent"&#10;]' />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+	</flow>
+	<munit:test name="train-delay-emailNotificationDelayedFlowTest" doc:id="0c50bc90-35e0-4115-98e6-bba40188699d" description="Test" timeOut="120000">
+		<munit:behavior >
+			<munit:set-event doc:name="delayStatus" doc:id="1ebd9279-18f7-489f-938a-6e6b7522aace" >
+				<munit:payload value='#[&#10;output application/json&#10;---&#10;{&#10;"delayStatus": "Delayed"&#10;}&#10;]' mediaType="application/json" />
+			</munit:set-event>
+			<munit-tools:mock-when doc:name="emailHtml" doc:id="73e8c7f4-4fed-4ba1-83de-94a6912823be" processor="parse-template">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="7ee67f5e-537e-444e-bc91-f134fe451c7f" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:payload value='#[&#10;output application/json&#10;---&#10;"Delayed Template"&#10;]' />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+			<flow-ref doc:name="emailFlow" doc:id="6b08ba41-cf3c-49d1-a481-5f65547153d1" name="emailFlow"/>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to train-delay-emailNotificationFlow" doc:id="489ea791-f566-46e8-9ecd-489ac4f7fc84" name="train-delay-emailNotificationFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="notNull" doc:id="ba651105-fde7-42c1-8220-c3bf659c0fad" message="#['Not as expected']" expression="#[payload]" is="#[MunitTools::notNullValue()]"/>
+		</munit:validation>
+	</munit:test>
+
+</mule>

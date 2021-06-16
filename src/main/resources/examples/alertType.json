@@ -1,0 +1,9 @@
+[{
+    "originLocation": “LBG”,
+    "destinationLocation": “CST”,
+    "serviceType": “train”,
+    "serviceId": “abc”,
+    "delayStatus": ”Delayed”,
+    "delayTime": 3,
+    "trainDelayReason": “Trainbreakdown”
+}]
