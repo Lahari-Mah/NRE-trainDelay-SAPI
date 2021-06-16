@@ -30,7 +30,6 @@ pipeline
             print 'username=' + username + 'password=' + password
             }
              print %MULE_VERSION% 
-             print usernameVariable
              sh 'mvn package deploy -DmuleDeploy -DskipTests -Dmule.version="%MULE_VERSION%" -Danypoint.username=username -Danypoint.password=password -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.worker="%WORKER%"'
           }
     	}
