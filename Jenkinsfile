@@ -21,8 +21,8 @@ pipeline
         APP_NAME = 'NRE-trainDelayServices'
       }
      steps{
-             sh 'echo $DEPLOY_CREDS_USR'
-             sh 'mvn package deploy -DmuleDeploy -DskipTests -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.worker="%WORKER%"'
+             sh 'echo $DEPLOY_CREDS_USR env $ENVIRONMENT'
+             sh 'mvn package deploy -DmuleDeploy -DskipTests -Dmule.version=$MULE_VERSION -Danypoint.username=$DEPLOY_CREDS_USR -Danypoint.password=$DEPLOY_CREDS_PSW -Dcloudhub.app=$APP_NAME -Dcloudhub.environment=$ENVIRONMENT -Dcloudhub.worker=$WORKER'
     	}
     }
     
