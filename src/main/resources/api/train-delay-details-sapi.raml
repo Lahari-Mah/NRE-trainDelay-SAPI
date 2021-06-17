@@ -10,6 +10,8 @@ traits:
   client-id-required: !include /exchange_modules/ce59e7c2-b990-4fe5-98a4-b5dba8efff20/customer-trait/1.0.0/customer-trait.raml
 
 /delay:
+  is:
+    - client-id-required
   post:
     description: Consuming Soap URI
     body:
@@ -30,6 +32,8 @@ traits:
             example:
               message: Error in passing data
   /subscription:
+    is:
+      - client-id-required
     get:
       description: Retrieving Customer Subscription details from Database
       responses:
@@ -48,6 +52,8 @@ traits:
                 message: Error in retrieving details
   /email:
     /{emailId}:
+      is:
+        - client-id-required
       post:
         description: Email Notification sent to Customers
         body:
