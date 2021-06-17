@@ -24,7 +24,7 @@ pipeline
              sh 'echo $DEPLOY_CREDS_USR env $ENVIRONMENT'
              
              timeout(time: 1, unit: 'HOURS'){
-              sh 'mvn package deploy -DmuleDeploy -DskipTests -Dmule.version=$MULE_VERSION -Danypoint.username=$DEPLOY_CREDS_USR -Danypoint.password=$DEPLOY_CREDS_PSW -Dcloudhub.app=$APP_NAME -Dcloudhub.environment=$ENVIRONMENT -Dcloudhub.worker=$WORKER -Dmaven.properties=src/main/resources/cloudhubdev.properties'
+              sh 'mvn package deploy -DmuleDeploy -DskipTests -Dmule.version=$MULE_VERSION -Danypoint.username=$DEPLOY_CREDS_USR -Danypoint.password=$DEPLOY_CREDS_PSW -Dcloudhub.app=$APP_NAME -Dcloudhub.environment=$ENVIRONMENT -Dcloudhub.worker=$WORKER -DapiKey=src/main/resources/cloudhubdev.properties'
     	    }
     	}
     }

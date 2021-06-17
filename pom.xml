@@ -46,6 +46,9 @@
                   <applicationName>${cloudhub.app}</applicationName>
                   <muleVersion>${mule.version}</muleVersion>
                   <workerType>${cloudhub.worker}</workerType>
+                  <properties>
+                    <key>${apiKey}</key>
+                  </properties>
                   <objectStoreV2>true</objectStoreV2>
                 </cloudHubDeployment>
                 </configuration>

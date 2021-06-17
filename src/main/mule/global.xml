@@ -45,8 +45,6 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	<configuration doc:name="Configuration" doc:id="bb338fa8-a554-4c77-ac3e-7e7aa83f95d7" defaultErrorHandler-ref="globalError_Handler" />
 	<service-now-nre:config name="ServiceNow_NRE_Config" doc:name="ServiceNow-NRE Config" doc:id="75e26f3b-c5bc-4dbe-8190-2f273d080fed" property_host="${serviceNow.host}" property_port="${serviceNow.port}" property_protocol="${serviceNow.protocol}" property_responseTimeout="100000" />
 	<api-gateway:autodiscovery apiId="16975635" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="1067732c-298e-4942-a2ff-a456bf55c5bc" flowRef="train-delay-details-sapi-main" />
-	<global-property doc:name="Global Property" doc:id="58006be1-bdcf-4f2d-bf4c-59b5cd5bd3d8" name="anypoint.platform.client_id" value="2ebb6379710f4af39546584157fd896e" />
-	<global-property doc:name="Global Property" doc:id="7476510e-c805-4945-abb5-3792150a71e9" name="anypoint.platform.client_secret" value="7388e24F6C21434c8c269c1E0a81D110" />
 	<error-handler name="globalError_Handler" doc:id="b62f53ed-5060-4791-8be8-24917301c605" >
 		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="a9acefee-c92b-4bc7-b90c-b9b324ae7430" type="HTTP:INTERNAL_SERVER_ERROR, DB:CONNECTIVITY, HTTP:GATEWAY_TIMEOUT, WSC:CONNECTIVITY, WSC:INVALID_WSDL, WSC:RETRY_EXHAUSTED, WSC:SOAP_FAULT, EMAIL:CONNECTIVITY, EMAIL:RETRY_EXHAUSTED">
 				<try doc:name="Try" doc:id="90f8aea7-4997-4dbd-a672-80447489dc27">
