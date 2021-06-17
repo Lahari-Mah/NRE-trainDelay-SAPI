@@ -151,13 +151,6 @@
         </dependency>
     	<dependency>
             <groupId>ce59e7c2-b990-4fe5-98a4-b5dba8efff20</groupId>
-            <artifactId>train-delay-details-sapi</artifactId>
-            <version>1.0.0</version>
-            <classifier>raml</classifier>
-            <type>zip</type>
-        </dependency>
-    	<dependency>
-            <groupId>ce59e7c2-b990-4fe5-98a4-b5dba8efff20</groupId>
             <artifactId>mule-plugin-nationalrailway-servicenow-sapi</artifactId>
             <version>1.0.0</version>
             <classifier>mule-plugin</classifier>
@@ -179,6 +172,13 @@
             <artifactId>mule-jms-connector</artifactId>
             <version>1.6.3</version>
             <classifier>mule-plugin</classifier>
+        </dependency>
+    	<dependency>
+            <groupId>ce59e7c2-b990-4fe5-98a4-b5dba8efff20</groupId>
+            <artifactId>train-delay-details-sapi</artifactId>
+            <version>1.0.2</version>
+            <classifier>raml</classifier>
+            <type>zip</type>
         </dependency>
     </dependencies>
 
