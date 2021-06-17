@@ -121,7 +121,7 @@ output application/json
         </error-handler>
     </flow>
     <flow name="post:\delay:application\json:train-delay-details-sapi-config">
-        <flow-ref doc:name="train-delayDetailsRetrieval" doc:id="b9896870-36d6-48ed-9d6a-00858961077b" name="xmlEgFlow" />
+        <flow-ref doc:name="train-delay-soapRetrievalFlow" doc:id="b9896870-36d6-48ed-9d6a-00858961077b" name="train-delay-soapRetrievalFlow" />
     </flow>
     <flow name="get:\delay\subscription:train-delay-details-sapi-config">
         <flow-ref doc:name="trainDelay-crsDetailsFlow" doc:id="e277e11b-f8fd-4f09-9d25-641686bbbffe" name="trainDelay-crsDetails" />
