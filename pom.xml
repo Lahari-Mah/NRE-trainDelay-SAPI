@@ -154,12 +154,6 @@
             <scope>test</scope>
         </dependency>
     	<dependency>
-            <groupId>ce59e7c2-b990-4fe5-98a4-b5dba8efff20</groupId>
-            <artifactId>mule-plugin-nationalrailway-servicenow-sapi</artifactId>
-            <version>1.0.0</version>
-            <classifier>mule-plugin</classifier>
-        </dependency>
-    	<dependency>
             <groupId>com.mulesoft.connectors</groupId>
             <artifactId>mule-amqp-connector</artifactId>
             <version>1.6.0</version>
@@ -183,6 +177,12 @@
             <version>1.0.3</version>
             <classifier>raml</classifier>
             <type>zip</type>
+        </dependency>
+    	<dependency>
+            <groupId>ce59e7c2-b990-4fe5-98a4-b5dba8efff20</groupId>
+            <artifactId>mule-plugin-nationalrailway-servicenow-sapi</artifactId>
+            <version>1.0.1</version>
+            <classifier>mule-plugin</classifier>
         </dependency>
     </dependencies>
 

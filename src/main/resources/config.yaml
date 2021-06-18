@@ -14,3 +14,5 @@ serviceNow:
   port: "8087"
   host: "0.0.0.0"
   protocol: "HTTP"
+  clientId: "452e961bff2c4e899f09a3afb5ffa099"
+  clientSecret: "5447C65c460F4a9583f632B26C3c6c7a"
